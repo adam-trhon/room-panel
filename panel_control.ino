@@ -72,6 +72,12 @@ void set(uint8_t col, uint8_t row, bool value) {
 	
 }
 
+void setColumn(uint8_t column, uint8_t value) {
+	for (int i = 0; i < 8; ++i) {
+		set(column, i, value&(1<<(7-i)));
+	}
+}
+
 void font74(uint8_t *points, uint8_t count) {
 	for (int i = 0; i < count; ++i) {
 		set(points[i]%4, points[i]/4, 1);
