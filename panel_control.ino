@@ -67,7 +67,7 @@ void set(uint8_t col, uint8_t row, bool value) {
 	if (value) {
 		values[row][i_panel] |= 1<<i_bit;
 	} else {
-		values[row][i_panel] ^= 1<<i_bit;
+		values[row][i_panel] &= ~(1<<i_bit);
 	}
 	
 }
