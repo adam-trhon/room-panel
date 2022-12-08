@@ -86,163 +86,96 @@ void font74(uint8_t *points, uint8_t count) {
 
 void drawChar(char c) {
 	switch (c) {
+		case 0:
+			setColumn(3, B00000000);
+			setColumn(2, B00000000);
+			setColumn(1, B00000000);
+			setColumn(0, B00000000);
+			break;
 
-		case '1': {
-			uint8_t points[] = {
-				             3,
-				         6,  7,
-				      9,    11,
-				            15,
-				            19,
-				            23,
-				            27,
-			};
-			font74(points, sizeof(points));
+		case '1':
+			setColumn(3, B11111110);
+			setColumn(2, B01000000);
+			setColumn(1, B00100000);
+			setColumn(0, B00000000);
 			break;
-		}
 
-		case '2': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				             7,
-				            11,
-				12, 13, 14, 15,
-				16,
-				20,
-				24, 25, 26, 27,
-			};
-			font74(points, sizeof(points));
+		case '2':
+			setColumn(3, B11110010);
+			setColumn(2, B10010010);
+			setColumn(1, B10010010);
+			setColumn(0, B10011110);
 			break;
-		}
 
-		case '3': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				             7,
-				            11,
-				12, 13, 14, 15,
-				            19,
-				            23,
-				24, 25, 26, 27,
-			};
-			font74(points, sizeof(points));
+		case '3':
+			setColumn(3, B11111110);
+			setColumn(2, B10010010);
+			setColumn(1, B10010010);
+			setColumn(0, B10010010);
 			break;
-		}
 
-		case '4': {
-			uint8_t points[] = {
-				 0,          3,
-				 4,          7,
-				 8,         11,
-				12, 13, 14, 15,
-				            19,
-				            23,
-				            27,
-			};
-			font74(points, sizeof(points));
+		case '4':
+			setColumn(3, B11111110);
+			setColumn(2, B00010000);
+			setColumn(1, B00010000);
+			setColumn(0, B11110000);
 			break;
-		}
 
-		case '5': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				 4,
-				 8,
-				12, 13, 14, 15,
-				            19,
-				            23,
-				24, 25, 26, 27,
-			};
-			font74(points, sizeof(points));
+		case '5':
+			setColumn(3, B10011110);
+			setColumn(2, B10010010);
+			setColumn(1, B10010010);
+			setColumn(0, B11110010);
 			break;
-		}
-		case '6': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				 4,
-				 8,
-				12, 13, 14, 15,
-				16,         19,
-				20,         23,
-				24, 25, 26, 27,
-			};
-			font74(points, sizeof(points));
+
+		case '6':
+			setColumn(3, B10011110);
+			setColumn(2, B10010010);
+			setColumn(1, B10010010);
+			setColumn(0, B11111110);
 			break;
-		}
-		case '7': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				             7,
-				            11,
-				            15,
-				            19,
-				            23,
-				            27,
-			};
-			font74(points, sizeof(points));
+
+		case '7':
+			setColumn(3, B11100000);
+			setColumn(2, B10011000);
+			setColumn(1, B10000110);
+			setColumn(0, B10000000);
 			break;
-		}
-		case '8': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				 4,          7,
-				 8,         11,
-				12, 13, 14, 15,
-				16,         19,
-				20,         23,
-				24, 25, 26, 27,
-			};
-			font74(points, sizeof(points));
+
+		case '8':
+			setColumn(3, B11111110);
+			setColumn(2, B10010010);
+			setColumn(1, B10010010);
+			setColumn(0, B11111110);
 			break;
-		}
-		case '9': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				 4,          7,
-				 8,         11,
-				12, 13, 14, 15,
-				            19,
-				            23,
-				24, 25, 26, 27,
-			};
-			font74(points, sizeof(points));
+
+		case '9':
+			setColumn(3, B11111110);
+			setColumn(2, B10010000);
+			setColumn(1, B10010000);
+			setColumn(0, B11110000);
 			break;
-		}
-		case '0': {
-			uint8_t points[] = {
-				 0,  1,  2,  3,
-				 4,          7,
-				 8,         11,
-				12,         15,
-				16,         19,
-				20,         23,
-				24, 25, 26, 27,
-			};
-			font74(points, sizeof(points));
+
+		case '0':
+			setColumn(3, B11111110);
+			setColumn(2, B10000010);
+			setColumn(1, B10000010);
+			setColumn(0, B11111110);
 			break;
-		}
-		case '%': {
-			uint8_t points[] = {
-				 0,  1,        
-				 4,  5,        
-				            11,
-				        14,
-				    17,       
-				20,     22, 23,
-				        26, 27,
-			};
-			font74(points, sizeof(points));
+
+		case '%':
+			setColumn(3, B00100110);
+			setColumn(2, B00010110);
+			setColumn(1, B11001000);
+			setColumn(0, B11000100);
 			break;
-		}
-		case '^': {
-			uint8_t points[] = {
-				     1,  2,  3, 
-				     5,      7,
-				     9, 10, 11,
-			};
-			font74(points, sizeof(points));
+
+		case '^':
+			setColumn(3, B00000000);
+			setColumn(2, B11100000);
+			setColumn(1, B10100000);
+			setColumn(0, B11100000);
 			break;
-		}
 	}
 }
 
