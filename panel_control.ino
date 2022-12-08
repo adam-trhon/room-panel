@@ -247,7 +247,7 @@ void setup() {
 	SPI.begin();
 
 	SPI.beginTransaction(SPISettings(10000000, MSBFIRST, SPI_MODE0));
-	setRegForAll(REG_INTENSITY, 0);
+	setRegForAll(REG_INTENSITY, 1);
 	setRegForAll(REG_SCAN_LIMIT, 7);
 	setRegForAll(REG_SHUTDOWN, 1);
 	SPI.endTransaction();
