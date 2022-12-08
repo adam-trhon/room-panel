@@ -78,6 +78,13 @@ void setColumn(uint8_t column, uint8_t value) {
 	}
 }
 
+void setRow(uint8_t row, uint32_t value) {
+	const uint32_t mask = 1;
+	for (int i = 0; i < 32; ++i) {
+		set(i, row, value&(mask<<(31-i)));
+	}
+}
+
 void drawChar(char c) {
 	switch (c) {
 		case 0:
