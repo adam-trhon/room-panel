@@ -200,9 +200,9 @@ uint32_t iteration;
 
 void loop() {
 	// put your main code here, to run repeatedly:
-	char chars[] = "%";
 	
 	clearAll();
+
 	translation = 0;
 	drawChar('4');
 	translation = 5;
