@@ -87,94 +87,94 @@ void font74(uint8_t *points, uint8_t count) {
 void drawChar(char c) {
 	switch (c) {
 		case 0:
-			setColumn(3, B00000000);
-			setColumn(2, B00000000);
-			setColumn(1, B00000000);
-			setColumn(0, B00000000);
+			setColumn(3, 0b00000000);
+			setColumn(2, 0b00000000);
+			setColumn(1, 0b00000000);
+			setColumn(0, 0b00000000);
 			break;
 
 		case '1':
-			setColumn(3, B11111110);
-			setColumn(2, B01000000);
-			setColumn(1, B00100000);
-			setColumn(0, B00000000);
+			setColumn(3, 0b11111110);
+			setColumn(2, 0b01000000);
+			setColumn(1, 0b00100000);
+			setColumn(0, 0b00000000);
 			break;
 
 		case '2':
-			setColumn(3, B11110010);
-			setColumn(2, B10010010);
-			setColumn(1, B10010010);
-			setColumn(0, B10011110);
+			setColumn(3, 0b11110010);
+			setColumn(2, 0b10010010);
+			setColumn(1, 0b10010010);
+			setColumn(0, 0b10011110);
 			break;
 
 		case '3':
-			setColumn(3, B11111110);
-			setColumn(2, B10010010);
-			setColumn(1, B10010010);
-			setColumn(0, B10010010);
+			setColumn(3, 0b11111110);
+			setColumn(2, 0b10010010);
+			setColumn(1, 0b10010010);
+			setColumn(0, 0b10010010);
 			break;
 
 		case '4':
-			setColumn(3, B11111110);
-			setColumn(2, B00010000);
-			setColumn(1, B00010000);
-			setColumn(0, B11110000);
+			setColumn(3, 0b11111110);
+			setColumn(2, 0b00010000);
+			setColumn(1, 0b00010000);
+			setColumn(0, 0b11110000);
 			break;
 
 		case '5':
-			setColumn(3, B10011110);
-			setColumn(2, B10010010);
-			setColumn(1, B10010010);
-			setColumn(0, B11110010);
+			setColumn(3, 0b10011110);
+			setColumn(2, 0b10010010);
+			setColumn(1, 0b10010010);
+			setColumn(0, 0b11110010);
 			break;
 
 		case '6':
-			setColumn(3, B10011110);
-			setColumn(2, B10010010);
-			setColumn(1, B10010010);
-			setColumn(0, B11111110);
+			setColumn(3, 0b10011110);
+			setColumn(2, 0b10010010);
+			setColumn(1, 0b10010010);
+			setColumn(0, 0b11111110);
 			break;
 
 		case '7':
-			setColumn(3, B11100000);
-			setColumn(2, B10011000);
-			setColumn(1, B10000110);
-			setColumn(0, B10000000);
+			setColumn(3, 0b11100000);
+			setColumn(2, 0b10011000);
+			setColumn(1, 0b10000110);
+			setColumn(0, 0b10000000);
 			break;
 
 		case '8':
-			setColumn(3, B11111110);
-			setColumn(2, B10010010);
-			setColumn(1, B10010010);
-			setColumn(0, B11111110);
+			setColumn(3, 0b11111110);
+			setColumn(2, 0b10010010);
+			setColumn(1, 0b10010010);
+			setColumn(0, 0b11111110);
 			break;
 
 		case '9':
-			setColumn(3, B11111110);
-			setColumn(2, B10010000);
-			setColumn(1, B10010000);
-			setColumn(0, B11110000);
+			setColumn(3, 0b11111110);
+			setColumn(2, 0b10010000);
+			setColumn(1, 0b10010000);
+			setColumn(0, 0b11110000);
 			break;
 
 		case '0':
-			setColumn(3, B11111110);
-			setColumn(2, B10000010);
-			setColumn(1, B10000010);
-			setColumn(0, B11111110);
+			setColumn(3, 0b11111110);
+			setColumn(2, 0b10000010);
+			setColumn(1, 0b10000010);
+			setColumn(0, 0b11111110);
 			break;
 
 		case '%':
-			setColumn(3, B00100110);
-			setColumn(2, B00010110);
-			setColumn(1, B11001000);
-			setColumn(0, B11000100);
+			setColumn(3, 0b00100110);
+			setColumn(2, 0b00010110);
+			setColumn(1, 0b11001000);
+			setColumn(0, 0b11000100);
 			break;
 
 		case '^':
-			setColumn(3, B00000000);
-			setColumn(2, B11100000);
-			setColumn(1, B10100000);
-			setColumn(0, B11100000);
+			setColumn(3, 0b00000000);
+			setColumn(2, 0b11100000);
+			setColumn(1, 0b10100000);
+			setColumn(0, 0b11100000);
 			break;
 	}
 }
