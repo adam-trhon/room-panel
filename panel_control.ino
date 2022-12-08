@@ -78,12 +78,6 @@ void setColumn(uint8_t column, uint8_t value) {
 	}
 }
 
-void font74(uint8_t *points, uint8_t count) {
-	for (int i = 0; i < count; ++i) {
-		set(points[i]%4, points[i]/4, 1);
-	}
-}
-
 void drawChar(char c) {
 	switch (c) {
 		case 0:
