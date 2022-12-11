@@ -94,31 +94,14 @@ void loop() {
 
 	panel.clear();
 
-	panel.setOffset(0, 0);
-	panel.drawChar53('4');
-
-	panel.setOffset(4, 0);
-	panel.drawChar53('2');
-
-	panel.setOffset(8, 0);
-	panel.drawChar53('%');
-
-	panel.setOffset(15, 0);
-	panel.drawChar53('2');
-
-	panel.setOffset(19, 0);
-	panel.drawChar53('2');
-
-	panel.setOffset(23, 0);
-	panel.drawChar53(',');
-
-	panel.setOffset(26, 0);
-	panel.drawChar53('5');
-
-	panel.setOffset(30, 0);
-	panel.drawChar53('^');
+	if (iteration % 2) {
+		drawHumidity53(panel, 0, 1, 42);
+		drawTemperature53(panel, 15, 1, 325);
+	} else {
+		drawTime74(panel, 5, 1, 13, 4);
+	}
 
 	panel.commit();
 	iteration++;
-	delay(100);
+	delay(2000);
 }
