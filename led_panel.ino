@@ -208,6 +208,19 @@ void LedPanel::drawChar74(char c) {
 			setColumn(1, 0b10100000);
 			setColumn(0, 0b11100000);
 			break;
+
+		case ',':
+			setColumn(1, 0b00000110);
+			setColumn(0, 0b00000001);
+			break;
+
+		case '.':
+			setColumn(0, 0b00000100);
+			break;
+
+		case ':':
+			setColumn(0, 0b01000100);
+			break;
 	}
 }
 
@@ -284,6 +297,9 @@ void LedPanel::drawChar53(char c) {
 			break;
 		case '.':
 			setColumn(0, 0b00001000);
+			break;
+		case ':':
+			setColumn(0, 0b01010000);
 			break;
 	}
 }
