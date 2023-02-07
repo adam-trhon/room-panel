@@ -1,4 +1,6 @@
 #include "led_panel.h"
+#include "sht35.h"
+#include <Wire.h>
 
 int slaveSelectPin = 10;
 LedPanel panel;
@@ -8,6 +10,7 @@ void setup() {
 	panel.init(slaveSelectPin);
 	panel.setWrap(false, true);
 	iteration = 0;
+	Wire.begin();
 }
 
 void drawHumidity53(LedPanel& panel, uint8_t offset_hor, uint8_t offset_ver, uint8_t value) {
@@ -89,19 +92,20 @@ void drawTime74(LedPanel& panel, uint8_t offset_hor, uint8_t offset_ver, uint8_t
 }
 
 
+
 void loop() {
 	// put your main code here, to run repeatedly:
 
+	uint32_t humidity;
+	uint32_t temperature;
+
+	sht35_measure(&humidity, &temperature);
+
 	panel.clear();
 
-	if (iteration % 2) {
-		drawHumidity53(panel, 0, 1, 42);
-		drawTemperature53(panel, 15, 1, 325);
-	} else {
-		drawTime74(panel, 5, 1, 13, 4);
-	}
+	drawHumidity53(panel, 0, 1, humidity);
+	drawTemperature53(panel, 15, 1, temperature);
 
 	panel.commit();
-	iteration++;
 	delay(2000);
 }
