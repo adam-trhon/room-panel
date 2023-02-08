@@ -1,5 +1,8 @@
 #include "sht35.h"
 
+static uint32_t old_humidity = 0;
+static uint32_t old_temperature = 0;
+
 void sht35_measure(uint32_t *humidity, uint32_t *temperature) {
 	uint8_t measurementRequest[] = {0x2C, 0x06};
 
@@ -25,4 +28,12 @@ void sht35_measure(uint32_t *humidity, uint32_t *temperature) {
 	*humidity = (((uint32_t) response[3]) << 8) + response[4];
 	*humidity *= 100;
 	*humidity /= 0xFFFF;
+
+	if (*humidity == 0 || *humidity > 100 || *temperature == 0 || *temperature > 500) {
+		*humidity = old_humidity;
+		*temperature = old_temperature;
+	} else {
+		old_humidity = *humidity;
+		old_temperature = *temperature;
+	}
 }
